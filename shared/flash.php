@@ -25,7 +25,8 @@ function render_flash(): string
     if (!$f) {
         return "";
     }
-    $class = $f["type"] === "error" ? "alert alert-error" : "alert alert-success";
-    $icon  = $f["type"] === "error" ? "⚠" : "✓";
-    return '<div class="' . $class . '">' . $icon . " " . htmlspecialchars($f["message"]) . "</div>";
+    $type = $f["type"] === "error" ? "error" : "success";
+    $label = $type === "error" ? "ERROR" : "SUKSES";
+    $message = htmlspecialchars($f["message"]);
+    return '<div class="alert alert-' . $type . '" data-label="' . $label . '"><span class="alert-message">' . $message . "</span></div>";
 }

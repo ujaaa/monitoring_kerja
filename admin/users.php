@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
             $stmt->bind_param("i", $id);
             $ok = $stmt->execute() && $stmt->affected_rows > 0;
-            set_flash($ok ? "success" : "error", $ok ? "User dihapus." : "User tidak ditemukan.");
+            set_flash($ok ? "success" : "error", $ok ? "Akun user berhasil dihapus." : "User tidak ditemukan.");
         }
     }
 
