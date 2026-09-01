@@ -39,7 +39,7 @@ page_start("Dashboard Admin", "Ringkasan sistem dan aktivitas.", "dashboard");
         <?php if (empty($users)): ?>
             <div class="empty-task">Belum ada user terdaftar.</div>
         <?php else: ?>
-            <table class="report-table">
+            <table class="report-table admin-user-table">
                 <thead><tr><th>Nama</th><th>Username</th><th>Role</th></tr></thead>
                 <tbody>
                     <?php foreach ($users as $u): ?>
@@ -62,7 +62,7 @@ page_start("Dashboard Admin", "Ringkasan sistem dan aktivitas.", "dashboard");
         <?php if (empty($recentTasks)): ?>
             <div class="empty-task">Belum ada pekerjaan tercatat.</div>
         <?php else: ?>
-            <table class="report-table">
+            <table class="report-table admin-task-table">
                 <thead><tr><th>Task</th><th>User</th><th>Status</th></tr></thead>
                 <tbody>
                     <?php foreach ($recentTasks as $t): ?>
@@ -86,7 +86,7 @@ page_start("Dashboard Admin", "Ringkasan sistem dan aktivitas.", "dashboard");
     <?php if ($counts["total"] === 0): ?>
         <div class="empty-task">Belum ada pekerjaan tercatat.</div>
     <?php else: ?>
-        <table class="report-table">
+        <table class="report-table admin-laporan-table">
             <thead>
                 <tr><th>Status</th><th>Jumlah</th><th>Persentase</th></tr>
             </thead>

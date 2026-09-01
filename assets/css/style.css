@@ -544,11 +544,12 @@ button, input, select, textarea {
     width: 100%;
     border-collapse: collapse;
     font-size: 13.5px;
+    table-layout: fixed;
 }
 
 .report-table th,
 .task-table th {
-    padding: 12px 28px;
+    padding: 11px 24px;
     background: var(--surface);
     color: var(--muted);
     font-size: 11px;
@@ -558,16 +559,21 @@ button, input, select, textarea {
     text-align: left;
     border-bottom: 2px solid var(--ink);
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .report-table td,
 .task-table td {
-    padding: 16px 28px;
+    padding: 14px 24px;
     border-bottom: 1px solid var(--border);
     color: var(--ink);
     vertical-align: middle;
     line-height: 1.5;
     transition: background var(--transition);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .report-table tbody tr:last-child td,
@@ -601,6 +607,93 @@ button, input, select, textarea {
 .task-desc { color: var(--muted); font-size: 12.5px; }
 .task-actions { display: flex; gap: 6px; align-items: center; }
 .task-actions form { margin: 0; }
+
+/* Report table column alignment */
+.report-table th:first-child,
+.report-table td:first-child {
+    padding-left: 24px;
+}
+
+.report-table th:last-child,
+.report-table td:last-child {
+    padding-right: 24px;
+}
+
+/* User dashboard table columns */
+.user-dashboard-table th:nth-child(1),
+.user-dashboard-table td:nth-child(1) { width: 70%; }
+
+.user-dashboard-table th:nth-child(2),
+.user-dashboard-table td:nth-child(2) { width: 30%; }
+
+/* Admin laporan table columns */
+.admin-laporan-table th:nth-child(1),
+.admin-laporan-table td:nth-child(1) { width: 35%; }
+.admin-laporan-table th:nth-child(2),
+.admin-laporan-table td:nth-child(2) { width: 20%; }
+.admin-laporan-table th:nth-child(3),
+.admin-laporan-table td:nth-child(3) { width: 45%; }
+
+/* User dashboard table columns */
+.user-dashboard-table th:nth-child(1),
+.user-dashboard-table td:nth-child(1) { width: 70%; }
+
+.user-dashboard-table th:nth-child(2),
+.user-dashboard-table td:nth-child(2) { width: 30%; }
+
+/* Admin user table columns */
+.admin-user-table th:nth-child(1),
+.admin-user-table td:nth-child(1) { width: 28%; }
+.admin-user-table th:nth-child(2),
+.admin-user-table td:nth-child(2) { width: 32%; }
+.admin-user-table th:nth-child(3),
+.admin-user-table td:nth-child(3) { width: 25%; }
+.admin-user-table th:nth-child(4),
+.admin-user-table td:nth-child(4) { width: 15%; }
+
+/* Admin recent tasks table columns */
+.admin-task-table th:nth-child(1),
+.admin-task-table td:nth-child(1) { width: 45%; }
+.admin-task-table th:nth-child(2),
+.admin-task-table td:nth-child(2) { width: 30%; }
+.admin-task-table th:nth-child(3),
+.admin-task-table td:nth-child(3) { width: 25%; }
+
+/* Laporan table columns */
+.laporan-table th:nth-child(1),
+.laporan-table td:nth-child(1) { width: 35%; }
+.laporan-table th:nth-child(2),
+.laporan-table td:nth-child(2) { width: 20%; }
+.laporan-table th:nth-child(3),
+.laporan-table td:nth-child(3) { width: 15%; }
+.laporan-table th:nth-child(4),
+.laporan-table td:nth-child(4) { width: 15%; }
+.laporan-table th:nth-child(5),
+.laporan-table td:nth-child(5) { width: 15%; }
+
+/* Supervisor task table columns */
+.supervisor-task-table th:nth-child(1),
+.supervisor-task-table td:nth-child(1) { width: 30%; }
+.supervisor-task-table th:nth-child(2),
+.supervisor-task-table td:nth-child(2) { width: 22%; }
+.supervisor-task-table th:nth-child(3),
+.supervisor-task-table td:nth-child(3) { width: 16%; }
+.supervisor-task-table th:nth-child(4),
+.supervisor-task-table td:nth-child(4) { width: 16%; }
+.supervisor-task-table th:nth-child(5),
+.supervisor-task-table td:nth-child(5) { width: 16%; }
+
+/* User task table columns */
+.task-main-table th:nth-child(1),
+.task-main-table td:nth-child(1) { width: 38%; }
+.task-main-table th:nth-child(2),
+.task-main-table td:nth-child(2) { width: 16%; }
+.task-main-table th:nth-child(3),
+.task-main-table td:nth-child(3) { width: 16%; }
+.task-main-table th:nth-child(4),
+.task-main-table td:nth-child(4) { width: 16%; }
+.task-main-table th:nth-child(5),
+.task-main-table td:nth-child(5) { width: 14%; }
 
 /* ---------- BADGES ---------- */
 .badge,

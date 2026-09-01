@@ -101,7 +101,7 @@ page_start("Data Pekerjaan", "Kelola semua pekerjaan Anda.", "task");
             Belum ada pekerjaan. Klik "Tambah Pekerjaan" untuk memulai.
         </div>
     <?php else: ?>
-        <table class="report-table">
+        <table class="report-table task-main-table">
             <thead>
                 <tr>
                     <th>Pekerjaan</th>

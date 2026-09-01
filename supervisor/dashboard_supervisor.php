@@ -40,7 +40,7 @@ page_start("Dashboard Supervisor", "Ringkasan pekerjaan seluruh tim.", "dashboar
     <?php if (empty($tasks)): ?>
         <div class="empty-task">Belum ada pekerjaan tercatat.</div>
     <?php else: ?>
-        <table class="report-table">
+        <table class="report-table supervisor-task-table">
             <thead>
                 <tr><th>Pekerjaan</th><th>User</th><th>Status</th><th>Deadline</th></tr>
             </thead>

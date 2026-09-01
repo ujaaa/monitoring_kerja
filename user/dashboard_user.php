@@ -39,7 +39,7 @@ page_start("Dashboard", "Selamat datang, " . $nama . ".", "dashboard");
     <?php if (empty($recent)): ?>
         <div class="empty-task">Belum ada pekerjaan. <a href="task.php">Tambah sekarang</a>.</div>
     <?php else: ?>
-        <table class="report-table">
+        <table class="report-table user-dashboard-table">
             <thead>
                 <tr><th>Pekerjaan</th><th>Status</th></tr>
             </thead>

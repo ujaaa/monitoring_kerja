@@ -63,7 +63,7 @@ page_start("Monitoring Pekerjaan", "Pantau progres pekerjaan seluruh tim.", "mon
     <?php if (empty($tasks)): ?>
         <div class="empty-task">Tidak ada pekerjaan yang cocok dengan filter.</div>
     <?php else: ?>
-        <table class="report-table">
+        <table class="report-table supervisor-task-table">
             <thead>
                 <tr>
                     <th>Pekerjaan</th>

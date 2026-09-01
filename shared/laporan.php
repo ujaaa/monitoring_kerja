@@ -65,7 +65,7 @@ page_start("Laporan Pekerjaan", "Rekap status pekerjaan" . ($scoped ? " Anda" : 
     <?php if (empty($tasks)): ?>
         <div class="empty-task">Belum ada pekerjaan yang tercatat.</div>
     <?php else: ?>
-        <table class="report-table">
+        <table class="report-table laporan-table">
             <thead>
                 <tr>
                     <th>Task</th>

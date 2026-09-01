@@ -133,7 +133,7 @@ page_start("Kelola User", $q !== "" ? "Hasil pencarian \"" . $q . "\"" : "Tambah
     <?php if (empty($users)): ?>
         <div class="empty-task">Tidak ada user yang cocok.</div>
     <?php else: ?>
-        <table class="report-table">
+        <table class="report-table admin-user-table">
             <thead>
                 <tr>
                     <th>Nama</th>
