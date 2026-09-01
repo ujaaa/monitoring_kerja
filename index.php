@@ -13,10 +13,10 @@ if (isset($_SESSION["role"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FAFAF7">
+    <meta name="theme-color" content="#F7F6F1">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <title>Login — Monitoring Kerja</title>
-    <link rel="stylesheet" href="assets/css/style.css?v=3">
+    <link rel="stylesheet" href="assets/css/style.css?v=4">
 </head>
 <body>
 <div class="login-page">

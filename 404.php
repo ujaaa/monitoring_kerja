@@ -7,7 +7,7 @@ http_response_code(404);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FAFAF7">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=4">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <title>Halaman tidak ditemukan — Monitoring Kerja</title>
 </head>

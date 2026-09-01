@@ -58,8 +58,11 @@ function page_start(string $title, string $subtitle = "", string $activeKey = ""
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#3D4451">
     <link rel="icon" type="image/svg+xml" href="<?= $base ?>assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title><?= htmlspecialchars($title) ?> — Monitoring Kerja</title>
-    <link rel="stylesheet" href="<?= $base ?>assets/css/style.css?v=3">
+    <link rel="stylesheet" href="<?= $base ?>assets/css/style.css?v=4">
 </head>
 <body>
 <a href="#konten-utama" class="skip-link">Lompat ke konten utama</a>
