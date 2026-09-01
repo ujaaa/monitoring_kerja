@@ -1,20 +1,31 @@
 <?php
+/**
+ * Setup database — hanya boleh dijalankan lewat CLI (php config/setup.php),
+ * tidak dari browser.
+ */
+if (PHP_SAPI !== "cli") {
+    http_response_code(403);
+    exit("Akses ditolak. Jalankan dari CLI: php config/setup.php");
+}
+
 $host = "127.0.0.1";
 $user = "root";
 $password = "";
-$port = 3307;
+$port = 3306; // 3306 XAMPP default, 3307 hanya jika custom
 
 $conn = new mysqli($host, $user, $password, "", $port);
 
 if ($conn->connect_error) {
-    die("Koneksi MySQL gagal: " . $conn->connect_error);
+    die("Koneksi MySQL gagal: " . $conn->connect_error . "\n");
 }
 
 if (!$conn->query("CREATE DATABASE IF NOT EXISTS monitoring_kerja")) {
-    die("Gagal membuat database: " . $conn->error);
+    die("Gagal membuat database: " . $conn->error . "\n");
 }
 
-$conn->select_db("monitoring_kerja");
+if (!$conn->select_db("monitoring_kerja")) {
+    die("Gagal memilih database: " . $conn->error . "\n");
+}
 
 /* USERS */
 $sql = "CREATE TABLE IF NOT EXISTS users (
@@ -24,7 +35,8 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(150) NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     role ENUM('user', 'supervisor', 'admin') NOT NULL DEFAULT 'user',
-    foto VARCHAR(255) NULL
+    foto VARCHAR(255) NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
 if (!$conn->query($sql)) {
     die("Gagal membuat tabel users: " . $conn->error);
@@ -42,6 +54,9 @@ if (!in_array("email", $columns, true)) {
 }
 if (!in_array("foto", $columns, true)) {
     $conn->query("ALTER TABLE users ADD COLUMN foto VARCHAR(255) NULL AFTER role");
+}
+if (!in_array("created_at", $columns, true)) {
+    $conn->query("ALTER TABLE users ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP");
 }
 
 /* TASKS */

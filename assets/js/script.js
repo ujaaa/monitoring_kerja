@@ -61,6 +61,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 profileMenu.classList.toggle("show");
 
+                btnProfile.setAttribute(
+                    "aria-expanded",
+                    profileMenu.classList.contains("show") ? "true" : "false"
+                );
+
             }
         );
 
@@ -75,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 ) {
 
                     profileMenu.classList.remove("show");
+                    btnProfile.setAttribute("aria-expanded", "false");
 
                 }
 

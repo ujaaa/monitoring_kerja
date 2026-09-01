@@ -1,0 +1,8 @@
+# Halaman 404 ramah + harden file sensitif
+ErrorDocument 404 /404.php
+ErrorDocument 403 /404.php
+
+# Jangan izinkan akses langsung ke setup db
+<Files "setup.php">
+  Require all denied
+</Files>
