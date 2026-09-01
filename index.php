@@ -26,11 +26,11 @@ if (isset($_SESSION["role"])) {
         <p class="subtitle">Masuk untuk melanjutkan pekerjaan Anda</p>
 
         <?php if (isset($_GET["error"])): ?>
-            <div class="alert alert-error">Username atau password salah.</div>
+            <div class="alert alert-error" data-label="ERROR">Username atau password salah.</div>
         <?php endif; ?>
 
         <?php if (isset($_GET["registered"])): ?>
-            <div class="alert alert-success">Akun berhasil dibuat. Silakan login.</div>
+            <div class="alert alert-success" data-label="SUKSES">Akun berhasil dibuat. Silakan login.</div>
         <?php endif; ?>
 
         <form action="auth/login.php" method="POST">

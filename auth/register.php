@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <p class="subtitle">Daftarkan akun baru</p>
 
         <?php if ($error): ?>
-            <div class="alert alert-error"><?= htmlspecialchars($error) ?></div>
+            <div class="alert alert-error" data-label="ERROR"><?= htmlspecialchars($error) ?></div>
         <?php endif; ?>
 
         <form method="POST">
