@@ -18,20 +18,16 @@ page_start("Dashboard Supervisor", "Ringkasan pekerjaan seluruh tim.", "dashboar
 
 <section class="stat-grid">
     <div class="stat-card">
-        <div><span>Total Task</span><strong><?= $counts["total"] ?></strong><small>Semua pekerjaan</small></div>
-        <div class="stat-icon">≡</div>
+        <div><span>Total Task</span><strong><?= $counts["total"] ?></strong></div>
     </div>
-    <div class="stat-card">
-        <div><span>Belum Dikerjakan</span><strong><?= $counts["pending"] ?></strong><small>Menunggu</small></div>
-        <div class="stat-icon orange">○</div>
+    <div class="stat-card accent-primary">
+        <div><span>Belum Dikerjakan</span><strong><?= $counts["pending"] ?></strong></div>
     </div>
-    <div class="stat-card">
-        <div><span>Sedang Dikerjakan</span><strong><?= $counts["in_progress"] ?></strong><small>Task berjalan</small></div>
-        <div class="stat-icon cyan">↻</div>
+    <div class="stat-card accent-warning">
+        <div><span>Sedang Dikerjakan</span><strong><?= $counts["in_progress"] ?></strong></div>
     </div>
-    <div class="stat-card">
-        <div><span>Selesai</span><strong><?= $counts["completed"] ?></strong><small>Task selesai</small></div>
-        <div class="stat-icon green">✓</div>
+    <div class="stat-card accent-success">
+        <div><span>Selesai</span><strong><?= $counts["completed"] ?></strong></div>
     </div>
 </section>
 

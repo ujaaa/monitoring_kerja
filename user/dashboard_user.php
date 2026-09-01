@@ -16,16 +16,16 @@ page_start("Dashboard", "Selamat datang, " . $nama . ".", "dashboard");
 
 <section class="stat-grid">
     <?php $late = task_overdue_count($conn, $uid); ?>
-    <div class="stat-card<?= $late > 0 ? " stat-late" : " stat-zero" ?>">
+    <div class="stat-card<?= $late > 0 ? " accent-danger" : " accent-primary" ?>">
         <div><span>Terlambat</span><strong><?= $late ?></strong></div>
     </div>
-    <div class="stat-card<?= $counts["in_progress"] > 0 ? " stat-today" : " stat-zero" ?>">
+    <div class="stat-card accent-warning">
         <div><span>Berjalan</span><strong><?= $counts["in_progress"] ?></strong></div>
     </div>
-    <div class="stat-card<?= $counts["pending"] > 0 ? "" : " stat-zero" ?>">
+    <div class="stat-card">
         <div><span>Menunggu</span><strong><?= $counts["pending"] ?></strong></div>
     </div>
-    <div class="stat-card<?= $counts["completed"] > 0 ? " stat-done" : " stat-zero" ?>">
+    <div class="stat-card accent-success">
         <div><span>Selesai</span><strong><?= $counts["completed"] ?></strong></div>
     </div>
 </section>

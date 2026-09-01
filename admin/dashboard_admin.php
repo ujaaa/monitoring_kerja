@@ -16,21 +16,17 @@ page_start("Dashboard Admin", "Ringkasan sistem dan aktivitas.", "dashboard");
 ?>
 
 <section class="stat-grid">
-    <div class="stat-card">
-        <div><span>Total User</span><strong><?= $totalUsers ?></strong><small>Semua role</small></div>
-        <div class="stat-icon">☰</div>
+    <div class="stat-card accent-primary">
+        <div><span>Total User</span><strong><?= $totalUsers ?></strong></div>
     </div>
     <div class="stat-card">
-        <div><span>Total Task</span><strong><?= $counts["total"] ?></strong><small>Semua pekerjaan</small></div>
-        <div class="stat-icon">≡</div>
+        <div><span>Total Task</span><strong><?= $counts["total"] ?></strong></div>
     </div>
-    <div class="stat-card">
-        <div><span>Sedang Dikerjakan</span><strong><?= $counts["in_progress"] ?></strong><small>Task berjalan</small></div>
-        <div class="stat-icon cyan">↻</div>
+    <div class="stat-card accent-warning">
+        <div><span>Sedang Dikerjakan</span><strong><?= $counts["in_progress"] ?></strong></div>
     </div>
-    <div class="stat-card">
-        <div><span>Selesai</span><strong><?= $counts["completed"] ?></strong><small>Task selesai</small></div>
-        <div class="stat-icon green">✓</div>
+    <div class="stat-card accent-success">
+        <div><span>Selesai</span><strong><?= $counts["completed"] ?></strong></div>
     </div>
 </section>
 
@@ -103,7 +99,14 @@ page_start("Dashboard Admin", "Ringkasan sistem dan aktivitas.", "dashboard");
                     <tr>
                         <td><span class="badge status-<?= $key ?>"><?= htmlspecialchars($label) ?></span></td>
                         <td><strong><?= $c ?></strong></td>
-                        <td><?= $pct ?>%</td>
+                        <td>
+                            <div style="display:flex;align-items:center;gap:10px;">
+                                <div style="flex:1;height:6px;background:var(--border);border-radius:999px;overflow:hidden;min-width:80px;">
+                                    <div style="height:100%;width:<?= $pct ?>%;background:var(--ink);border-radius:999px;transition:width 300ms ease;"></div>
+                                </div>
+                                <span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:12px;color:var(--muted);min-width:36px;text-align:right;"><?= $pct ?>%</span>
+                            </div>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
