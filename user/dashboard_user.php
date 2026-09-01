@@ -40,6 +40,9 @@ page_start("Dashboard", "Selamat datang, " . $nama . ".", "dashboard");
         <div class="empty-task">Belum ada pekerjaan. <a href="task.php">Tambah sekarang</a>.</div>
     <?php else: ?>
         <table class="report-table">
+            <thead>
+                <tr><th>Pekerjaan</th><th>Status</th></tr>
+            </thead>
             <tbody>
                 <?php foreach ($recent as $t): ?>
                     <tr>
