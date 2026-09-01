@@ -82,4 +82,33 @@ page_start("Dashboard Admin", "Ringkasan sistem dan aktivitas.", "dashboard");
     </div>
 </section>
 
+<section class="dashboard-panel">
+    <div class="panel-header">
+        <h2>Laporan Pekerjaan</h2>
+        <a href="../shared/laporan.php">Lihat Semua</a>
+    </div>
+    <?php if ($counts["total"] === 0): ?>
+        <div class="empty-task">Belum ada pekerjaan tercatat.</div>
+    <?php else: ?>
+        <table class="report-table">
+            <thead>
+                <tr><th>Status</th><th>Jumlah</th><th>Persentase</th></tr>
+            </thead>
+            <tbody>
+                <?php foreach (["pending" => "Belum Dikerjakan", "in_progress" => "Sedang Dikerjakan", "completed" => "Selesai"] as $key => $label): ?>
+                    <?php
+                        $c = (int) ($counts[$key] ?? 0);
+                        $pct = $counts["total"] > 0 ? round($c / $counts["total"] * 100) : 0;
+                    ?>
+                    <tr>
+                        <td><span class="badge status-<?= $key ?>"><?= htmlspecialchars($label) ?></span></td>
+                        <td><strong><?= $c ?></strong></td>
+                        <td><?= $pct ?>%</td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php endif; ?>
+</section>
+
 <?php page_end(); ?>
