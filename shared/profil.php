@@ -114,7 +114,7 @@ page_start("Profil Saya", "Kelola data akun Anda.", "profil");
                 <div>
                     <label class="btn-kecil" for="inputFoto">Ganti Foto</label>
                     <input type="file" name="foto" id="inputFoto" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" hidden>
-                    <p class="photo-info">Pilih foto, lalu klik "Simpan Profil" di bawah. JPG, PNG, atau WEBP. Maksimal 2MB.</p>
+                    <p class="photo-info">JPG, PNG, WEBP. Maksimal 2MB.</p>
                 </div>
             </div>
 
