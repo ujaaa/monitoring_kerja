@@ -39,7 +39,7 @@ function dashboard_path(string $role, string $prefix = "../"): string
     return match ($role) {
         "admin"      => $prefix . "admin/dashboard_admin.php",
         "supervisor" => $prefix . "supervisor/dashboard_supervisor.php",
-        default      => $prefix . "user/dashboard_user.php",
+        "user"       => $prefix . "user/dashboard_user.php",
     };
 }
 
